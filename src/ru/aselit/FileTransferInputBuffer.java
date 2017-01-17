@@ -3,11 +3,11 @@ package ru.aselit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class FileTransferBuffer {
+public class FileTransferInputBuffer {
 
 	private byte[] buffer = null;
 	
-	private static final Logger log = LogManager.getLogger(FileTransferBuffer.class);
+	private static final Logger log = LogManager.getLogger(FileTransferInputBuffer.class);
 	
 	
 	public void write(byte []inBuf, int size) {

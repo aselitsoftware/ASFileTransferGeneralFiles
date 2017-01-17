@@ -2,7 +2,8 @@ package ru.aselit;
 
 public enum FileTransferCommandEnum {
 
-	ftcNone(0), ftcAuthorize(1), ftcFileInfo(2), ftcUploadStart(3), ftcUpload(4), ftcDownloadStart(5), ftcDownload(6);
+	ftcNone(0), ftcWaitResponse(1), ftcAuthorize(2), ftcFileInfo(3), ftcUploadStart(4),
+		ftcUpload(5), ftcDownloadStart(6), ftcDownload(7);
 	
 	private final int value;
 	
@@ -26,5 +27,19 @@ public enum FileTransferCommandEnum {
 			if (v[i].ordinal() == value)
 				return v[i];
 		return ftcNone;
+	}
+	
+	public static String toString(FileTransferCommandEnum state) {
+		
+		switch (state) {
+		case ftcWaitResponse:	return "Waiting for a response";
+		case ftcAuthorize:		return "Authorize";
+		case ftcFileInfo:		return "Request file info";
+		case ftcUploadStart:	return "Start upload";
+		case ftcUpload:			return "Uploading";
+		case ftcDownloadStart:	return "Start download";
+		case ftcDownload:		return "Downloading";
+		default:				return "Unknown";
+		}
 	}
 }
